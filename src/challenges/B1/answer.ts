@@ -8,11 +8,12 @@
  */
 
 // ↓ uncomment bellow lines and add your response!
-/*
+
 export default function ({ events }: { events: EventDatetime[] }): EventDatetime[] {
-    return [];
+    events.sort((a,b) => (a.endDatetime < b.endDatetime ? -1 : 1))
+    return events;
 }
-*/
+
 
 // used interfaces, do not touch
 export interface EventDatetime {
