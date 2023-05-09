@@ -1,4 +1,4 @@
-import { GroupWithSills } from "./answer";
+import { GroupWithSkills } from "./answer";
 
 export default [
     {
@@ -109,4 +109,4 @@ export default [
             "ReactJS"
         ]
     }
-] as GroupWithSills[];
+] as GroupWithSkills[];
