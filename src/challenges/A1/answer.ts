@@ -8,11 +8,11 @@
 
 // ↓ uncomment bellow lines and add your response!
 
-// export default function ({ students }: { students: Student[] }): Student[] {
-//   return students
-//     .sort((a, b) => a.name.localeCompare(b.name))
-//     .sort((a, b) => a.age - b.age);
-// }
+export default function ({ students }: { students: Student[] }): Student[] {
+  return students
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .sort((a, b) => a.age - b.age);
+}
 
 // used interfaces, do not touch
 export interface Student {
