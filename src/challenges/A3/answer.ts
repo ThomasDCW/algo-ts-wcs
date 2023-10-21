@@ -11,27 +11,27 @@
 
 // ↓ uncomment bellow lines and add your response!
 
-export default function ({
-  lastActivityDatetime,
-  messages,
-}: {
-  lastActivityDatetime: string;
-  messages: Message[];
-}): MessageWithUnread[] {
-  const sortedMessages = messages.sort(
-    (a, b) => new Date(a.sentAt).getTime() - new Date(b.sentAt).getTime()
-  );
+// export default function ({
+//   lastActivityDatetime,
+//   messages,
+// }: {
+//   lastActivityDatetime: string;
+//   messages: Message[];
+// }): MessageWithUnread[] {
+//   const sortedMessages = messages.sort(
+//     (a, b) => new Date(a.sentAt).getTime() - new Date(b.sentAt).getTime()
+//   );
 
-  const lastActivityDate = new Date(lastActivityDatetime);
+//   const lastActivityDate = new Date(lastActivityDatetime);
 
-  const messagesWithUnread = sortedMessages.map((message) => {
-    const messageSentDate = new Date(message.sentAt);
-    const unread = messageSentDate > lastActivityDate;
-    return { ...message, unread };
-  });
+//   const messagesWithUnread = sortedMessages.map((message) => {
+//     const messageSentDate = new Date(message.sentAt);
+//     const unread = messageSentDate > lastActivityDate;
+//     return { ...message, unread };
+//   });
 
-  return messagesWithUnread;
-}
+//   return messagesWithUnread;
+// }
 // used interfaces, do not touch
 export interface Message {
   author: string;

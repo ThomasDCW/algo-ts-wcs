@@ -8,24 +8,24 @@
 
 // ↓ uncomment bellow lines and add your response!
 
-export default function ({
-  events,
-}: {
-  events: EventWithCategory[];
-}): string[] {
-  const allEvents = events.map((e) => e.categories);
+// export default function ({
+//   events,
+// }: {
+//   events: EventWithCategory[];
+// }): string[] {
+//   const allEvents = events.map((e) => e.categories);
 
-  const AllEventsWithNoRepeat = allEvents.reduce((acc, current) => {
-    current.forEach((item) => {
-      if (!acc.includes(item)) {
-        acc.push(item);
-      }
-    });
-    return acc;
-  }, []);
+//   const AllEventsWithNoRepeat = allEvents.reduce((acc, current) => {
+//     current.forEach((item) => {
+//       if (!acc.includes(item)) {
+//         acc.push(item);
+//       }
+//     });
+//     return acc;
+//   }, []);
 
-  return AllEventsWithNoRepeat.sort();
-}
+//   return AllEventsWithNoRepeat.sort();
+// }
 
 // used interfaces, do not touch
 export interface EventWithCategory {

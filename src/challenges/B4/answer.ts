@@ -50,44 +50,44 @@
 
 // ↓ uncomment bellow lines and add your response!
 
-export default function ({
-  submissions,
-}: {
-  submissions: Submission[];
-}): MonthSubmission[] {
-  const result: MonthSubmission[] = [];
-  submissions.forEach((submission) => {
-    const month = new Date(submission.submittedAt);
-    month.setUTCDate(1);
-    month.setUTCHours(0, 0, 0, 0);
-    const index = result.findIndex((object) => {
-      return object.month === month.toISOString();
-    });
-    if (index === -1) {
-      result.push({
-        month: month.toISOString(),
-        submissions: [
-          {
-            name: submission.name,
-            submittedAt: submission.submittedAt,
-          },
-        ],
-      });
-    } else {
-      result[index].submissions.push({
-        name: submission.name,
-        submittedAt: submission.submittedAt,
-      });
-      result[index].submissions.sort((a, b) =>
-        a.submittedAt.localeCompare(b.submittedAt)
-      );
-    }
-  });
-  result.sort(
-    (a, b) => new Date(a.month).getTime() - new Date(b.month).getTime()
-  );
-  return result;
-}
+// export default function ({
+//   submissions,
+// }: {
+//   submissions: Submission[];
+// }): MonthSubmission[] {
+//   const result: MonthSubmission[] = [];
+//   submissions.forEach((submission) => {
+//     const month = new Date(submission.submittedAt);
+//     month.setUTCDate(1);
+//     month.setUTCHours(0, 0, 0, 0);
+//     const index = result.findIndex((object) => {
+//       return object.month === month.toISOString();
+//     });
+//     if (index === -1) {
+//       result.push({
+//         month: month.toISOString(),
+//         submissions: [
+//           {
+//             name: submission.name,
+//             submittedAt: submission.submittedAt,
+//           },
+//         ],
+//       });
+//     } else {
+//       result[index].submissions.push({
+//         name: submission.name,
+//         submittedAt: submission.submittedAt,
+//       });
+//       result[index].submissions.sort((a, b) =>
+//         a.submittedAt.localeCompare(b.submittedAt)
+//       );
+//     }
+//   });
+//   result.sort(
+//     (a, b) => new Date(a.month).getTime() - new Date(b.month).getTime()
+//   );
+//   return result;
+// }
 
 // used interfaces, do not touch
 export interface Submission {
